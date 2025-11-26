@@ -23,7 +23,8 @@
     "react-dom": "^19.1.1",
     "react-hook-form": "^7.63.0",
     "react-redux": "^9.2.0",
-    "react-router": "^7.9.1"
+    "react-router": "^7.9.1",
+    "react-router-dom": "^7.9.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.35.0",
@@ -31,6 +32,7 @@
     "@testing-library/react": "^16.3.0",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
+    "@types/react-router-dom": "^5.3.3",
     "@vitejs/plugin-react-swc": "^4.0.1",
     "eslint": "^9.35.0",
     "eslint-plugin-react-hooks": "^5.2.0",

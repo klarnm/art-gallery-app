@@ -1,4 +1,5 @@
-import { Routes, Route, Navigate } from 'react-router';
+// src/router/AppRouter.tsx
+import { Routes, Route, Navigate } from 'react-router-dom'; // 👈 DOM
 
 import { useCheckAuth } from '../hooks';
 import { CheckingAuth } from '../ui';
@@ -8,20 +9,17 @@ import { GalleryRoutes } from '../gallery';
 export const AppRouter = () => {
   const status = useCheckAuth();
 
-  if (status === 'checking') {
-    return <CheckingAuth />;
-  }
+  if (status === 'checking') return <CheckingAuth />;
 
   return (
     <Routes>
       {status === 'authenticated' ? (
-        // GalleryApp
+        // Monta la app en la raíz
         <Route path="/*" element={<GalleryRoutes />} />
       ) : (
-        // Login y registro
         <Route path="/auth/*" element={<AuthRoutes />} />
       )}
-      <Route path="/*" element={<Navigate to="/auth/login" />} />
+      <Route path="*" element={<Navigate to="/auth/login" replace />} />
     </Routes>
-  );
+  );
 };
